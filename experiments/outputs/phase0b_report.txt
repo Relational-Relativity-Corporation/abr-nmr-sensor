@@ -1,0 +1,127 @@
+=================================================================
+abr-nmr-phase0b — Multi-tissue Boundary Detection
+8-element solenoid array, 4-compartment phantom
+Metatron Dynamics, Inc.
+=================================================================
+
+[1/4] Declaring domain...
+=================================================================
+DOMAIN DECLARATION — abr-nmr-phase0b
+Phase 0b: Multi-tissue phantom, 8-element solenoid array
+=================================================================
+
+--- Phantom ---
+  Diameter: 80.0mm  Length: 50.0mm
+  Tissue compartments: 4
+
+--- Tissue Types ---
+              Name   Water%    T1 ms   T2* ms   Vascular
+               CSF    99.0%     4000    500.0         No
+      white_matter    72.0%      700     45.0        Yes
+       gray_matter    84.0%     1100     55.0        Yes
+             tumor    92.0%     1400     80.0        Yes
+
+--- Coil Array ---
+  Elements: 8  Spacing: 45.0°  Topology: clockwise ring
+  Directed edges: 16 (8 clockwise + 8 counterclockwise)
+
+--- Element Tissue Mix ---
+  Elem    Angle    Hemisphere   CSF%    WM%    GM%   Tumor%
+     0      0°  Right (tumor)   23.4   62.5    0.0     14.1
+     1     45°  Right (tumor)   23.4   62.5    0.0     14.1
+     2     90°  Right (tumor)   23.4   62.5    0.0     14.1
+     3    135°  Right (tumor)   23.4   62.5    0.0     14.1
+     4    180°     Left (GM)   23.4   62.5   14.1      0.0
+     5    225°     Left (GM)   23.4   62.5   14.1      0.0
+     6    270°     Left (GM)   23.4   62.5   14.1      0.0
+     7    315°     Left (GM)   23.4   62.5   14.1      0.0
+
+--- Adjacency ---
+  Edge 0: 0→1  (reverse: edge 8 = 1→0)
+  Edge 1: 1→2  (reverse: edge 9 = 2→1)
+  Edge 2: 2→3  (reverse: edge 10 = 3→2)
+  Edge 3: 3→4  (reverse: edge 11 = 4→3)
+  Edge 4: 4→5  (reverse: edge 12 = 5→4)
+  Edge 5: 5→6  (reverse: edge 13 = 6→5)
+  Edge 6: 6→7  (reverse: edge 14 = 7→6)
+  Edge 7: 7→0  (reverse: edge 15 = 0→7)
+
+  Cardiac steps: 1200
+  Phase advance/TR: 288.0°
+
+Bounded over D. No claim beyond D.
+=================================================================
+
+[2/4] Computing per-element signal...
+
+--- Signal Field Summary (Phase 0b) ---
+
+  Per-tissue baseline signal:
+            Tissue    S_baseline    T2*_mod%
+               CSF      0.169006     0.0000%
+      white_matter      0.251773     0.1958%
+       gray_matter      0.251590     0.3918%
+             tumor      0.275231     0.7846%
+
+  Per-element signal and SNR:
+  Elem      Hemisphere    S_base         SNR      Mod%
+     0    Right(tumor)  0.235673    262050.6   0.3989%
+     1    Right(tumor)  0.235673    262050.6   0.3989%
+     2    Right(tumor)  0.235673    262050.6   0.3989%
+     3    Right(tumor)  0.235673    262050.6   0.3989%
+     4        Left(GM)  0.232349    258353.9   0.2962%
+     5        Left(GM)  0.232349    258353.9   0.2962%
+     6        Left(GM)  0.232349    258353.9   0.2962%
+     7        Left(GM)  0.232349    258353.9   0.2962%
+
+  S range (all elements, all steps): 0.231661 – 0.235673
+  Min SNR: 258353.9  Max SNR: 262050.6
+  All elements detectable in single step: YES
+
+[3/4] Running ABRCE operators...
+
+--- ABRCE Operator Report (Phase 0b) ---
+
+  ρ per element:
+    Element 0 [R(tumor)]: rho=0.000994
+    Element 1 [R(tumor)]: rho=0.000000
+    Element 2 [R(tumor)]: rho=0.000000
+    Element 3 [R(tumor)]: rho=0.000994
+    Element 4 [L(GM)]: rho=0.000994
+    Element 5 [L(GM)]: rho=0.000000
+    Element 6 [L(GM)]: rho=0.000000
+    Element 7 [L(GM)]: rho=0.000994
+
+  Edge classification:
+    Boundary edges (tumor↔GM): [3, 7, 11, 15]
+    Tumor interior edges:      [0, 1, 2, 8, 9, 10]
+    GM interior edges:         [4, 5, 6, 12, 13, 14]
+
+  E field range: -3.3246e-03 – 3.3246e-03
+
+  |E| at t=0 by edge class:
+    Boundary edges:       3.321313e-03
+    Tumor interior edges: 1.109308e-03
+    GM interior edges:    1.109308e-03
+
+  Mean |E| over all steps:
+    Boundary:      3.158233e-03
+    Tumor interior:1.054839e-03
+    GM interior:   1.054839e-03
+
+  --- BOUNDARY DETECTION VERDICT ---
+  BOUNDARY DETECTED.
+  Boundary E / tumor interior: 2.99×
+  Boundary E / GM interior:    2.99×
+  The operators find elevated relational contrast
+  at the declared tumor boundary.
+
+[4/4] Rendering figures...
+  Figure 1 → D:\Metatron_Dynamics\GitHub_Repos\abr-nmr-phase0\experiments\outputs\phase0b_array_map.png
+  Figure 2 → D:\Metatron_Dynamics\GitHub_Repos\abr-nmr-phase0\experiments\outputs\phase0b_E_field.png
+  Figure 3 → D:\Metatron_Dynamics\GitHub_Repos\abr-nmr-phase0\experiments\outputs\phase0b_boundary_detection.png
+
+Total run time: 1.3s
+Figures → D:\Metatron_Dynamics\GitHub_Repos\abr-nmr-phase0\experiments\outputs
+Bounded over D. No claim beyond D.
+=================================================================

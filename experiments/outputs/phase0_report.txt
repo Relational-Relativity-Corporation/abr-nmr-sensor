@@ -1,0 +1,102 @@
+=================================================================
+abr-nmr-phase0 — Phase 0 Bench Prototype Simulation
+Single-segment solenoid, pulsatile flow phantom
+Metatron Dynamics, Inc.
+=================================================================
+
+[1/3] Declaring domain and computing baseline signal...
+============================================================
+DOMAIN DECLARATION — abr-nmr-phase0
+Phase 0: Single-segment solenoid, pulsatile flow phantom
+============================================================
+
+--- Static Field ---
+  B0 = 1.5T  Larmor = 63.87 MHz
+
+--- Phantom Geometry ---
+  Tube diameter:  8.0mm
+  Tube length:    50.0mm
+  Volume:         2513.3 mm³  (2.5133 mL)
+
+--- Solenoid Coil ---
+  Inner diameter: 9.0mm
+  Length:         50.0mm
+  Turns:          20
+  Wire diameter:  0.5mm
+  Resistance:     48.384 mOhm
+  Filling factor: 0.7901
+
+--- Preamplifier ---
+  Noise figure:   2.9 dB
+  Noise factor:   1.9498
+
+--- Acquisition ---
+  TR=800ms  TE=30ms  flip=90.0°  BW=10000Hz
+  Cardiac steps:  1200
+  Phase advance/TR: 288.0°
+
+--- Phantom NMR Parameters ---
+  T1=1200.0ms  T2*_baseline=50.0ms
+  Proton density (rel): 0.85
+  Blood volume fraction: 0.95
+
+--- Susceptibility ---
+  Δχ_deoxy = 0.264 ppm
+  Geometry factor = 0.5
+  Oxygenation modulation A = 0.1
+
+--- Thermal Noise ---
+  Temperature: 310.0K
+  Johnson-Nyquist noise power: 4.2800e-17 W
+
+Bounded over D. No claim beyond D.
+============================================================
+
+--- Signal Field Summary ---
+  S_baseline:        0.226986  (zero susceptibility)
+  S range:           0.043454 – 0.057909
+  Fractional ΔS/S:   -0.808562 – -0.744880
+  Max |ΔS/S|:        0.808562  (80.8562%)
+
+  delta_B range:     1.7021e-07 – 2.0599e-07 T
+  T2* range:         13.3145 – 15.2593 ms
+  T2* baseline:      50.0 ms
+  Max ΔT2*:          -34.7407 ms
+
+  Signal declared. Noise analysis follows.
+
+[2/3] Computing noise model and detectability...
+
+--- Noise Model Summary ---
+  V_noise_coil_rms:     2.8781e-09 V
+  V_noise_total_rms:    4.0189e-09 V
+  V_signal_peak (FID):  2.0133e-03 V
+
+  SNR per cardiac step: 113708.72
+  Steps for SNR=5:      1  (single step sufficient)
+
+  Cardiac modulation depth:    0.808562  (80.8562%)
+  Modulation SNR per step:     91940.4991
+  Steps to detect modulation:  1  (single step sufficient)
+
+  --- DETECTABILITY VERDICT ---
+  DETECTABLE in single cardiac step.
+  Operators act on unaveraged per-step signal. ADMISSIBLE.
+
+[3/3] Parameter sweep — minimum viable configuration...
+
+  Parameter sweep — modulation SNR (target = 5.0)
+
+             Parameter      Declared     Mod SNR     Min for SNR=5
+                B0 [T]          1.56  240812.6507              0.50
+            Coil turns         20.00  222295.7226              5.00
+  Phantom diameter [mm]          7.96  220533.8304              3.00
+     Receiver BW [kHz]          9.08  233264.7637              1.00
+
+  Figure saved → D:\Metatron_Dynamics\GitHub_Repos\abr-nmr-phase0\experiments\outputs\phase0_snr.png
+
+Total run time: 0.5s
+Report → D:\Metatron_Dynamics\GitHub_Repos\abr-nmr-phase0\experiments\outputs\phase0_report.txt
+Figure → D:\Metatron_Dynamics\GitHub_Repos\abr-nmr-phase0\experiments\outputs\phase0_snr.png
+Bounded over D. No claim beyond D.
+=================================================================
