@@ -5,7 +5,7 @@
 
 A segmented cylindrical solenoid array detects tissue boundaries from water content contrast alone — no Fourier encoding, no temporal averaging, no spatial reconstruction. This repository establishes the physics of that claim through a declared simulation pipeline at 1.5T.
 
-→ [Investor overview](docs/investor_overview.md)
+→ [Investor overview](docs/relational_nmr_sensor_proposal.md)
 
 ---
 
@@ -113,7 +113,7 @@ tests/
     test_phase0c.py         Verifier tests — Phase 0c (38 tests)
 
 docs/
-    investor_overview.md        Framework demonstration document
+    relational_nmr_sensor_proposal.md  Framework demonstration document
     relational_nmr_sensor_build_plan.md   Phase 1 hardware build plan
 ```
 
