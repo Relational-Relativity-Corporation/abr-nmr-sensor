@@ -1,0 +1,35 @@
+Brain tissue does differ in its water properties, but there are several levels of differentiation.
+
+Gray matter vs. white matter: Yes. They have different water content, myelin content, and relaxation properties. This is one reason why Magnetic resonance imaging produces such good contrast.
+Major anatomical structures: Often yes, especially when combining multiple MR contrasts (such as T1, T2, diffusion, susceptibility, etc.).
+Cellular layers (for example, cortical laminae): Sometimes, with ultra-high-field MRI and specialized sequences, but this is technically challenging.
+Individual neurons: Not with current MRI or water-content measurements alone.
+
+The limiting factor isn't simply that neurons have similar water content. It's also one of spatial resolution.
+
+A typical neuron is on the order of 10–100 μm in size, while conventional clinical MRI voxels are roughly 1 mm³. Even research systems at very high field strengths typically average signals over many thousands to millions of cells within a voxel. The measured signal is therefore an aggregate of everything inside that volume.
+
+However, your question becomes more interesting if we move away from "water content" to the relational organization of water-related measurements.
+
+Suppose you measure not just:
+
+total water concentration,
+
+but also quantities such as:
+
+diffusion anisotropy,
+relaxation times,
+susceptibility,
+flow,
+local temporal dynamics,
+neighboring spatial relationships.
+
+Then the observable becomes a multidimensional field, not a scalar water-content map.
+
+Within your framework, that might be declared as multiple observables mapped into a relational field before applying your operators. The question would then become:
+
+Do different tissue types produce distinguishable relational signatures, even when individual scalar measurements overlap?
+
+That's a scientifically reasonable hypothesis to investigate. It is different from claiming that water content alone identifies every neuron.
+
+The strongest possibility, if your approach proves useful, would likely be that relational structure extracted from multiple physical observables provides better discrimination of tissue organization than any single observable by itself. Whether that extends to distinguishing individual neurons would depend on the available spatial resolution and the information contained in the measurements. Even a powerful relational analysis cannot recover distinctions that were never present in the acquired signal.
